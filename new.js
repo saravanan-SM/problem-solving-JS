@@ -7,7 +7,6 @@ let num = '';
 
 for(let i = 0; i <= input.length; i++){
     if(parseFloat(input[i]) || parseFloat(input[i]) === 0 ){
-        console.log(typeof(0))
         num = num.concat("", input[i])
     } else{
         if(str.length > 0) {
@@ -83,3 +82,22 @@ function countRepeatedWords(data) {
 }
 
 console.log("Problem 3 ANS:-", countRepeatedWords(words));
+
+
+
+// --------------- Problem 4 ----------------------
+// get like this bracket (), (), ()
+
+let char = '((()()))()))(())))';
+
+let split = char.split('')
+let join = [];
+
+split.forEach((ele, index) => {
+  if(index % 2 == 0 && ele == '(' && split[index+1] == ')'){
+    join.push(ele);
+    join.push(split[index+1]);
+  }
+})
+
+console.log("Problem 3 ANS:-", join)
