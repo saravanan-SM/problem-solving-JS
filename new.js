@@ -101,3 +101,38 @@ split.forEach((ele, index) => {
 })
 
 console.log("Problem 3 ANS:-", join)
+
+
+// --------------- Problem 5 ----------------------
+// Get Missing Numbers From Array [1,2,3,5,7,9]
+
+const missingNumbers = num => {
+    const max = Math.max(...num);
+    const min = Math.min(...num);
+    const missing = new Array();
+
+    for(let i=min; i<= max; i++) {
+        if(!num.includes(i)) {
+        missing.push(i);
+        }
+    }
+    return missing;
+}
+
+console.log("ans =>", missingNumbers([1,2,3,5,7,9]));
+
+
+// --------------- Problem 6 ----------------------
+// Create Diemesional Array 
+
+const dynamicDimensional = num => {
+    let ans = new Array();
+    let diemesional = 3;
+    let modulo = Math.ceil(num.length / diemesional);
+    for(var i = 0; i < modulo; i++){
+        ans.push(num.slice(i*diemesional, ((i+1)*diemesional)))
+    }
+    return ans;
+}
+
+console.log("ans =>", dynamicDimensional([1,2,3,4,56,7,8,9,10]));  
